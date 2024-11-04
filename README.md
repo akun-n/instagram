@@ -1,2 +1,3 @@
-# instagram
-A copy of instagram page for educational purposes only
+Project for Instagram testing
+
+Educational purposes only
