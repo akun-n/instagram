@@ -4,7 +4,7 @@ import os
 
 app = Flask(__name__)
 
-DATABASE = 'login_data2.db'
+DATABASE = 'login_data.db'
 
 def get_db():
     conn = sqlite3.connect(DATABASE)
